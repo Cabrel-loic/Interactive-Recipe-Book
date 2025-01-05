@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Interactive Recipe Book</h1>
+    </header>
+
+    <main>
+      <section id="recipe-list">
+        <h2>Your Recipes</h2>
+        <div id="recipes-container"></div>
+      </section>
+
+      <section id="add-recipe">
+        <h2>Add a Recipe</h2>
+        <form id="recipe-form">
+          <input
+            type="text"
+            id="recipe-title"
+            placeholder="Recipe Title"
+            required
+          />
+          <textarea
+            id="recipe-ingredients"
+            placeholder="Ingredients (comma-separated)"
+            required
+          ></textarea>
+          <textarea id="recipe-steps" placeholder="Steps" required></textarea>
+          <button type="submit">Add Recipe</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
