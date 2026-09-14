@@ -4,39 +4,88 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Book</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="Styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Interactive Recipe Book</h1>
-    </header>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">🍽️</span>
+          <div>
+            <p class="eyebrow">Kitchen companion</p>
+            <h1>Interactive Recipe Book</h1>
+          </div>
+        </div>
+        <button id="clear-all" class="secondary-btn" type="button">
+          Clear all
+        </button>
+      </header>
 
-    <main>
-      <section id="recipe-list">
-        <h2>Your Recipes</h2>
-        <div id="recipes-container"></div>
-      </section>
+      <main class="layout">
+        <section class="panel form-panel">
+          <div class="section-heading">
+            <h2>Add a Recipe</h2>
+          </div>
 
-      <section id="add-recipe">
-        <h2>Add a Recipe</h2>
-        <form id="recipe-form">
-          <input
-            type="text"
-            id="recipe-title"
-            placeholder="Recipe Title"
-            required
-          />
-          <textarea
-            id="recipe-ingredients"
-            placeholder="Ingredients (comma-separated)"
-            required
-          ></textarea>
-          <textarea id="recipe-steps" placeholder="Steps" required></textarea>
-          <button type="submit">Add Recipe</button>
-        </form>
-      </section>
-    </main>
+          <form id="recipe-form" class="recipe-form">
+            <div class="input-row two-up">
+              <label>
+                <span>Recipe name</span>
+                <input type="text" id="recipe-title" placeholder="e.g. Pasta Primavera" required />
+              </label>
+              <label>
+                <span>Category</span>
+                <input type="text" id="recipe-category" placeholder="Dinner, Dessert, Veggie..." />
+              </label>
+            </div>
 
-    <script src="script.js"></script>
+            <div class="input-row two-up">
+              <label>
+                <span>Prep time</span>
+                <input type="text" id="recipe-time" placeholder="30 minutes" />
+              </label>
+            </div>
+
+            <label>
+              <span>Ingredients</span>
+              <textarea
+                id="recipe-ingredients"
+                rows="6"
+                placeholder="One ingredient per line or separate with commas"
+                required
+              ></textarea>
+            </label>
+
+            <label>
+              <span>Steps</span>
+              <textarea
+                id="recipe-steps"
+                rows="6"
+                placeholder="Write the cooking steps here"
+                required
+              ></textarea>
+            </label>
+
+            <button type="submit" class="primary-btn">Add Recipe</button>
+          </form>
+        </section>
+
+        <section class="panel list-panel">
+          <div class="list-header">
+            <div class="section-heading">
+              <h2>Saved Recipes</h2>
+            </div>
+            <label class="search-box">
+              <span class="sr-only">Search recipes</span>
+              <input type="search" id="recipe-search" placeholder="Search recipes" />
+            </label>
+          </div>
+
+          <div id="recipes-container" class="recipes-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="Script.js"></script>
   </body>
 </html>
